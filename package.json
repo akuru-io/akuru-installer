@@ -25,12 +25,12 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "concurrently 'cross-env BROWSER=none yarn start:cra' 'wait-on http://localhost:3000 && electron .'",
+    "start": "concurrently 'cross-env BROWSER=none npm run start:cra' 'wait-on http://localhost:3000 && electron .'",
     "start:cra": "react-scripts start",
-    "build": "yarn build:cra && yarn build:electron",
+    "build": "npm run build:cra && npm run build:electron",
     "build:cra": "react-scripts build",
     "build:electron": "electron-builder",
-    "release": "yarn build:cra && electron-builder --publish=always",
+    "release": "npm run build:cra && electron-builder --publish=always",
     "format": "prettier --write 'src/**/*.{js,jsx,json,css,scss,md}'",
     "test:cra": "react-scripts test",
     "eject:cra": "react-scripts eject"
