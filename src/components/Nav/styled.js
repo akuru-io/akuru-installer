@@ -14,8 +14,6 @@ export const Menu = styled.ul`
   display: flex;
   flex-direction: column;
   width : 100%;
-  background-color:black;
-  
 `;
 
 export const MenuItem = styled.li`

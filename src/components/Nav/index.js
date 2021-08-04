@@ -25,14 +25,14 @@ export default function Nav() {
                </MenuItem>
                </Link>
 
-               <Link to ="/">
+               <Link to ="/installed-fonts">
                <MenuItem>
                     <InstalledFontsIcon />
                     <Text>Installed Fonts</Text>
                </MenuItem>
                </Link>
 
-               <Link to ="/">
+               <Link to ="/updates">
                <MenuItem>
                     <UpdatesIcon />
                     <Text>Updates</Text>

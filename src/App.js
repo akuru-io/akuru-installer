@@ -4,7 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styled from 'styled-components';
 
 import NavBar from 'components/Nav';
-import Home from 'screens/Home';
+import Home from 'screens/AllFonts';
+import InstalledFonts from 'screens/InstalledFonts';
+import Updates from 'screens/Updates';
+import Settings from 'screens/Settings';
 
 const Wrapper = styled.div`
   display: flex;
@@ -25,13 +28,29 @@ function App() {
       <Wrapper>
         <NavBar/>
         <Main>
-          test
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path="/installed-fonts">
+              <InstalledFonts />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path="/updates">
+              <Updates />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path="/settings">
+              <Settings />
+            </Route>
+          </Switch>
         </Main>
-
       </Wrapper>
     </Router>
-
   );
 }
-
 export default App;
