@@ -1,16 +1,23 @@
 import { Link } from 'react-router-dom';
 
+import ProfileBox from '../Profile';
 
 import {
-    Wrapper,
-    Menu,
-    MenuItem,
-    AllFontsIcon, 
     Text,
-    InstalledFontsIcon,
-    UpdatesIcon,
     Logo,
-
+    Menu,
+    Wrapper,
+    Divider,
+    MenuItem,
+    MenuText,
+    BottomBar,
+    AboutIcon,
+    ContentBox,
+    SettingBox,
+    UpdatesIcon,
+    SettingIcon,
+    AllFontsIcon, 
+    InstalledFontsIcon,
   } from './styled';
 
 export default function Nav() {
@@ -18,30 +25,58 @@ export default function Nav() {
         <Wrapper>
             <Logo />
             <Menu>
-               <Link  to ="/">
-               <MenuItem>
+                <Link style={{textDecoration:"none"}} to ="/">
+                <MenuItem>
                     <AllFontsIcon />
-                    <Text>All Fonts</Text>
-               </MenuItem>
+                    <MenuText>All Fonts</MenuText>
+                </MenuItem>
                </Link>
 
-               <Link to ="/installed-fonts">
-               <MenuItem>
+               <Link style={{textDecoration:"none"}} to ="/installed-fonts">
+                <MenuItem>
                     <InstalledFontsIcon />
-                    <Text>Installed Fonts</Text>
-               </MenuItem>
+                    <MenuText>Installed Fonts</MenuText>
+                </MenuItem>
                </Link>
 
-               <Link to ="/updates">
-               <MenuItem>
+               <Link style={{textDecoration:"none"}} to ="/updates">
+                <MenuItem>
                     <UpdatesIcon />
-                    <Text>Updates</Text>
-               </MenuItem>
+                    <MenuText>Updates</MenuText>
+                </MenuItem>
                </Link>
             </Menu>
-            
+
+            <Divider />
+
+            < ContentBox>
+                <MenuText>
+                    Text
+                </MenuText>
+            </ContentBox>
+
+            <Divider />
+
+            < ContentBox>
+                <MenuText>
+                    Sponsors
+                </MenuText>
+            </ContentBox>
+          
+            <BottomBar >
+                <Divider /> 
+                <ProfileBox />
+                <SettingBox>
+                    <SettingIcon />
+                    <Link style={{textDecoration:"none"}}to ="/settings">
+                    <   Text>Settings</Text>
+                    </Link>
+                    <AboutIcon />
+                    <Link tyle={{textDecoration:"none"}} to ="/settings">
+                    <   Text>About</Text>
+                    </Link>
+                </SettingBox>
+            </BottomBar>  
         </Wrapper>
-
     )
-
 }

@@ -5,9 +5,9 @@ import styled from 'styled-components';
 
 import NavBar from 'components/Nav';
 import Home from 'screens/AllFonts';
-import InstalledFonts from 'screens/InstalledFonts';
 import Updates from 'screens/Updates';
 import Settings from 'screens/Settings';
+import InstalledFonts from 'screens/InstalledFonts';
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,7 +19,6 @@ const Wrapper = styled.div`
 const Main = styled.div`
   height: 100vh;
   width : 75%;
-  padding: 30px;
 `;
 
 function App() {
