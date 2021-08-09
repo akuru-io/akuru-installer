@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import LogoSource from '../../assets/Logo';
-import AboutIconSource from '../../assets/AboutIcon';
-import UpdatesIconSource from '../../assets/UpdatesIcon';
-import SettingIconSource from '../../assets/SettingIcon';
-import AllFontsIconSource from '../../assets/AllFontsIcon';
-import InstalledFontsIconSource from '../../assets/InstalledFontsIcon';
+import LogoSource from '../../assets/Icon/Logo';
+import AboutIconSource from '../../assets/Icon/AboutIcon';
+import UpdatesIconSource from '../../assets/Icon/UpdatesIcon';
+import SettingIconSource from '../../assets/Icon/SettingIcon';
+import AllFontsIconSource from '../../assets/Icon/AllFontsIcon';
+import InstalledFontsIconSource from '../../assets/Icon/InstalledFontsIcon';
 
 export const Wrapper = styled.div`
   width: 15%;
@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
   @media screen and (max-width:80rem){
     width: 25%;
   }
+  
 `;
 
 export const Menu = styled.ul`

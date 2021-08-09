@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import ProfileIconSource from '../../assets/ProfileIcon';
+import ProfileIconSource from '../../assets/Icon/ProfileIcon';
 
 export const ProfileBox = styled.div`
   cursor: pointer;

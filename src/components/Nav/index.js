@@ -72,7 +72,7 @@ export default function Nav() {
                     <   Text>Settings</Text>
                     </Link>
                     <AboutIcon />
-                    <Link tyle={{textDecoration:"none"}} to ="/settings">
+                    <Link style={{textDecoration:"none"}} to ="/settings">
                     <   Text>About</Text>
                     </Link>
                 </SettingBox>

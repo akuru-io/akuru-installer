@@ -18,7 +18,8 @@ const Wrapper = styled.div`
 
 const Main = styled.div`
   height: 100vh;
-  width : 75%;
+  width:100%;
+  overflow-y: scroll;
 `;
 
 function App() {
