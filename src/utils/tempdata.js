@@ -1,5 +1,6 @@
 export const  registry =[
       {
+        "id":"1",
         "familyName": "Yaldevi",
         "description": "",
         "license": "OFL",
@@ -34,6 +35,7 @@ export const  registry =[
         "tags": []
       },
       {
+        "id":"2",
         "familyName": "Post No Bills",
         "description": "",
         "license": "OFL",
@@ -72,6 +74,7 @@ export const  registry =[
         "tags": []
       },
       {
+        "id":"3",
         "familyName": "Abhaya Libre",
         "description": "",
         "license": "OFL",
@@ -106,6 +109,7 @@ export const  registry =[
         "tags": []
       },
       {
+        "id":"4",
         "familyName": "GalleALPHA",
         "description": "",
         "license": "OFL",
@@ -124,6 +128,7 @@ export const  registry =[
         "tags": []
       },
       {
+        "id":"5",
         "familyName": "Gemunu Libre",
         "description": "",
         "license": "OFL",
@@ -162,6 +167,7 @@ export const  registry =[
         "tags": []
       },
       {
+        "id":"6",
         "familyName": "KaputaALPHA",
         "description": "",
         "license": "GPL-3.0-or-later",

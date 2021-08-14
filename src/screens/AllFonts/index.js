@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import FontCard from '../../components/FontCard';
 import {registry} from '../../utils/tempdata';
+import MoreFonts from '../../components/MoreFontsCard';
 
-//import './styles.css';
 import {
   Layout,
 } from './styled';
@@ -18,14 +18,16 @@ export default function AllFonts() {
     fetchAllFonts();
   }, []);
 
+
   return (
     <Layout>
-      {fonts.length>0 && fonts.map((font, index) => (
+      {fonts.length>0 && fonts.map((font)=> (
         <FontCard 
-          key={index}
+          key={font.id}
           fontItem ={font}
         />
       ))}
+      <MoreFonts/>
     </Layout>
   );
 }

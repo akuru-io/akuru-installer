@@ -20,29 +20,29 @@ import {
     Image,
 } from './styled';
 
-export default function FontCard(
+export default function FontCard({
     fontItem,
-){
-    const font =getFontObject(fontItem);
+    key,
+}){
     return(
         <>
-        {font && (
+        {fontItem && (
         <CardBox>
-            {getFontImageUrl(font) && (
-                <Image src={getFontImageUrl(font) } />
+            {getFontImageUrl(fontItem) && (
+                <Image src={getFontImageUrl(fontItem) } />
              )}
             <Description>
-                <FontName>{getFontFamily(font)}</FontName>
-                <GreyText>{getVersion(font)}</GreyText>
+                <FontName>{getFontFamily(fontItem)}</FontName>
+                <GreyText>{getVersion(fontItem)}</GreyText>
                 <Tag />
-                <GreyText>{getStyleCount(font)} files</GreyText>
+                <GreyText>{getStyleCount(fontItem)} files</GreyText>
             </Description>
             <Description>
                 <TextBox>
-                   {getfoundry(font)}
+                   {getfoundry(fontItem)}
                 </TextBox>
                 <Togglebtn>
-                    <ToggleButton />
+                    <ToggleButton id={fontItem.id}/>
                 </Togglebtn>
             </Description>
         </CardBox>

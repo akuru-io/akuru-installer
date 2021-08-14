@@ -1,6 +1,3 @@
-export const getFontObject =(font)=>
-    font && font.fontItem? font.fontItem:null;
-
 export const getFontFamily=(font)=>
     font && font.familyName? font.familyName:null;
 
