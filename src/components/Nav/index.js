@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ProfileBox from '../Profile';
 
 import {
+    Box,
     Text,
     Logo,
     Menu,
@@ -79,19 +80,22 @@ export default function Nav() {
                     Sponsors
                 </MenuText>
             </ContentBox>
-          
+            <Divider /> 
             <BottomBar >
-                <Divider /> 
                 <ProfileBox />
                 <SettingBox>
-                    <SettingIcon />
-                    <Link style={{textDecoration:"none"}}to ="/settings">
-                    <   Text>Settings</Text>
-                    </Link>
-                    <AboutIcon />
-                    <Link style={{textDecoration:"none"}} to ="/settings">
-                    <   Text>About</Text>
-                    </Link>
+                    <Box>
+                        <SettingIcon />
+                            <Link style={{textDecoration:"none"}}to ="/settings">
+                                < Text>Settings</Text>
+                            </Link>
+                    </Box>
+                    <Box>
+                        <AboutIcon />
+                            <Link style={{textDecoration:"none"}} to ="/settings">
+                                < Text>About</Text>
+                            </Link>
+                    </Box>
                 </SettingBox>
             </BottomBar>  
         </Wrapper>

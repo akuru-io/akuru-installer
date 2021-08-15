@@ -4,7 +4,7 @@ import ProfileIconSource from '../../assets/Icon/ProfileIcon';
 
 export const ProfileBox = styled.div`
   cursor: pointer;
-  padding:0px 10px 15px 20px;
+  padding:0px 10px 15px 0;
   display: flex;
   flex-direction:row;
 `;
@@ -19,6 +19,8 @@ export const Text =styled.p`
 `;
 
 export const ProfileIcon = styled(ProfileIconSource)`
+  min-width:20px;
+  min-height :20px;
   color: White;
   align-self: left;
   font-weight: bold;

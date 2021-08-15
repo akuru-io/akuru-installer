@@ -9,14 +9,13 @@ import PremiumIconSource  from '../../assets/Icon/PremiumIcon';
 import VoteForFontsIconSource  from '../../assets/Icon/VoteForFontsIcon';
 
 export const Wrapper = styled.div`
-  width: 15%;
+  width: 20%;
   background: #4E4D4D;
   display: flex;
   flex-direction: column;
-  @media screen and (max-width:80rem){
-    width: 25%;
+  @media screen and (max-width:100rem){
+    width: 30%;
   }
-  
 `;
 
 export const Menu = styled.ul`
@@ -42,33 +41,33 @@ export const MenuText =styled.p`
   align-self: left;
   font-weight: 900;
   font-size :15px;
-  padding-top: 8px;
-  padding-left :5px;
+  padding-top: 5px;
+  padding-left :10px;
 `;
 
 export const Text =styled.p`
   color:#878383;
-  padding-top: 8px;
+  padding-top: 4px;
   font-size:14px;
   font-weight:bold;
 `;
 
 export const Divider = styled.hr`
   border-top: 1px solid #383636;
-  padding :5px;
+  padding :0px;
   margin: 15px 10px;
 `;
 
 export const ContentBox = styled.div`
   height : 30%;
-  Padding:20px;
+  Padding:0 5px 10px 15px;
 `;
 
 export const BottomBar = styled.div`
   display:flex;
   flex-direction: column;
   flex-grow: 1;
-  padding-bottom:10px;
+  padding:0 5px 10px 15px;
 `;
 
 export const SettingBox =styled.div`
@@ -76,65 +75,78 @@ export const SettingBox =styled.div`
   flex-direction: row;
 `;
 
+export const Box =styled.div`
+    display:flex;
+    flex-direction: row;
+    width:50%;
+    justify-content: flex-start;
+    padding:5px;
+`;
+
 export const AllFontsIcon = styled(AllFontsIconSource)`
   color: #FFFFFF;;
-  min-width: 32px;
-  min-height:32px;
+  min-width: 24px;
+  min-height:24px;
   align-self: left;
-  padding : 0 5px;
+  padding : 0 ;
   font-weight: bold;
 `;
 
 export const InstalledFontsIcon = styled(InstalledFontsIconSource)`
   color: White;
-  min-width: 32px;
-  min-height:32px;
+  min-width: 24px;
+  min-height:24px;
   align-self: left;
-  padding : 0 5px;
+  padding : 0 ;
   font-weight: bold;
 `;
 
 export const UpdatesIcon = styled(UpdatesIconSource)`
   color: White;
-  min-width: 32px;
-  min-height:32px;
+  min-width: 20px;
+  min-height:20px;
   align-self: left;
-  padding : 0 0 0 10px;
+  padding : 0 5px 0 0 ;
   font-weight: bold;
 `;
 
 export const PremiumIcon = styled(PremiumIconSource)`
   color: White;
-  min-width: 32px;
-  min-height:32px;
+  min-width: 24px;
+  min-height:24px;
   align-self: left;
-  padding: 0 0 0 10px!important;
+  padding: 0 ;
   font-weight: bold;
 `;
 
 export const VoteForFontsIcon = styled(VoteForFontsIconSource)`
   color: White;
-  min-width: 32px;
-  min-height:32px;
+  min-width: 24px;
+  min-height:24px;
   align-self: left;
-  padding : 0 0 0 50px;
+  padding : 0 0 0 0px;
   font-weight: bold;
 `;
 
 export const SettingIcon = styled(SettingIconSource)`
   align-self: left;
-  padding : 5px 5px 10px 20px;
+  padding : 0 5px 0 0;
   font-weight: bold;
+  min-width: 20px;
+  min-height:20px;
   `;
 
 export const AboutIcon = styled(AboutIconSource)`
   align-self: left;
-  padding : 5px 5px 10px 20px;
+  padding : 0 5px 0 0;
   font-weight: bold;
+  min-width: 20px;
+  min-height:20px;
 `;
 
 export const Logo = styled(LogoSource)`
-  margin: 20px 20px 10px 20px ;
   min-width : 50px;
   min-height :50px;
+  padding : 0 0 0 0px;
+  margin : 15px 15px 10px 15px;
 `;

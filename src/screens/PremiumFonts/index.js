@@ -24,7 +24,6 @@ export default function PremiumFonts(){
         //Todo write method
       }
 
-    
     return(
         <Layout>
             <Header title ={title}/>

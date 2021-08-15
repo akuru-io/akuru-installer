@@ -1,4 +1,4 @@
-export default function ProfileIcon ({props}){
+export default function ProfileIcon (props){
     return(
         <svg 
             width="20" 
