@@ -17,6 +17,8 @@ import {
     UpdatesIcon,
     SettingIcon,
     AllFontsIcon, 
+    PremiumIcon,
+    VoteForFontsIcon,
     InstalledFontsIcon,
   } from './styled';
 
@@ -45,6 +47,21 @@ export default function Nav() {
                     <MenuText>Updates</MenuText>
                 </MenuItem>
                </Link>
+
+               <Link style={{textDecoration:"none"}} to ="/premium">
+                <MenuItem>
+                    <PremiumIcon />
+                    <MenuText>Premium</MenuText>
+                </MenuItem>
+               </Link>
+
+               <Link style={{textDecoration:"none"}} to ="/vote">
+                <MenuItem>
+                    <VoteForFontsIcon />
+                    <MenuText>Vote for Fonts</MenuText>
+                </MenuItem>
+               </Link>
+
             </Menu>
 
             <Divider />

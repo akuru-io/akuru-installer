@@ -5,6 +5,8 @@ import UpdatesIconSource from '../../assets/Icon/UpdatesIcon';
 import SettingIconSource from '../../assets/Icon/SettingIcon';
 import AllFontsIconSource from '../../assets/Icon/AllFontsIcon';
 import InstalledFontsIconSource from '../../assets/Icon/InstalledFontsIcon';
+import PremiumIconSource  from '../../assets/Icon/PremiumIcon';
+import VoteForFontsIconSource  from '../../assets/Icon/VoteForFontsIcon';
 
 export const Wrapper = styled.div`
   width: 15%;
@@ -21,7 +23,7 @@ export const Menu = styled.ul`
   display: flex;
   flex-direction: column;
   width : 100%;
-  height:20%;
+  height:40%;
 `;
 
 export const MenuItem = styled.li`
@@ -76,8 +78,8 @@ export const SettingBox =styled.div`
 
 export const AllFontsIcon = styled(AllFontsIconSource)`
   color: #FFFFFF;;
-  width: 32px;
-  height:32px;
+  min-width: 32px;
+  min-height:32px;
   align-self: left;
   padding : 0 5px;
   font-weight: bold;
@@ -85,8 +87,8 @@ export const AllFontsIcon = styled(AllFontsIconSource)`
 
 export const InstalledFontsIcon = styled(InstalledFontsIconSource)`
   color: White;
-  width: 32px;
-  height:32px;
+  min-width: 32px;
+  min-height:32px;
   align-self: left;
   padding : 0 5px;
   font-weight: bold;
@@ -94,10 +96,28 @@ export const InstalledFontsIcon = styled(InstalledFontsIconSource)`
 
 export const UpdatesIcon = styled(UpdatesIconSource)`
   color: White;
-  width: 32px;
-  height:32px;
+  min-width: 32px;
+  min-height:32px;
   align-self: left;
   padding : 0 0 0 10px;
+  font-weight: bold;
+`;
+
+export const PremiumIcon = styled(PremiumIconSource)`
+  color: White;
+  min-width: 32px;
+  min-height:32px;
+  align-self: left;
+  padding: 0 0 0 10px!important;
+  font-weight: bold;
+`;
+
+export const VoteForFontsIcon = styled(VoteForFontsIconSource)`
+  color: White;
+  min-width: 32px;
+  min-height:32px;
+  align-self: left;
+  padding : 0 0 0 50px;
   font-weight: bold;
 `;
 
@@ -114,7 +134,7 @@ export const AboutIcon = styled(AboutIconSource)`
 `;
 
 export const Logo = styled(LogoSource)`
-  padding: 20px;
-  width : 33px;
-  height :33px;
+  margin: 20px 20px 10px 20px ;
+  min-width : 50px;
+  min-height :50px;
 `;

@@ -8,6 +8,9 @@ import Home from 'screens/AllFonts';
 import Updates from 'screens/Updates';
 import Settings from 'screens/Settings';
 import InstalledFonts from 'screens/InstalledFonts';
+import PremiumFonts from 'screens/PremiumFonts';
+import VoteForFonts from 'screens/VoteFonts';
+
 
 const Wrapper = styled.div`
   display: flex;
@@ -41,6 +44,16 @@ function App() {
           <Switch>
             <Route exact path="/updates">
               <Updates />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path="/premium">
+              < PremiumFonts />
+            </Route>
+          </Switch>
+          <Switch>
+            <Route exact path="/Vote">
+              < VoteForFonts />
             </Route>
           </Switch>
           <Switch>

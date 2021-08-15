@@ -1,4 +1,4 @@
-export default function UpdatesIcon (props){
+export default function UpdatesIcon ({props}){
     return(
         <svg 
             width="24"

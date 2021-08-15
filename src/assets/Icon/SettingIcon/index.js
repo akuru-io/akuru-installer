@@ -1,4 +1,4 @@
-export default function SettingIcon(props){
+export default function SettingIcon({props}){
     return(
         <svg 
             width="20" 

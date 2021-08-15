@@ -1,8 +1,8 @@
 import Tag from '../../assets/Tag';
 import ToggleButton from '../../assets/ToggleButton';
+import Button from '../../assets/Button';
 
 import {
-    getFontObject,
     getFontFamily,
     getStyleCount,
     getVersion,
@@ -18,10 +18,15 @@ import {
     TextBox,
     Togglebtn,
     Image,
+    Box,
+    SubBox,
 } from './styled';
 
 export default function FontCard({
     fontItem,
+    toggleEnabled = true,
+    buttonText,
+    onClick,
     key,
 }){
     return(
@@ -31,20 +36,32 @@ export default function FontCard({
             {getFontImageUrl(fontItem) && (
                 <Image src={getFontImageUrl(fontItem) } />
              )}
-            <Description>
-                <FontName>{getFontFamily(fontItem)}</FontName>
-                <GreyText>{getVersion(fontItem)}</GreyText>
-                <Tag />
-                <GreyText>{getStyleCount(fontItem)} files</GreyText>
-            </Description>
-            <Description>
-                <TextBox>
-                   {getfoundry(fontItem)}
-                </TextBox>
+            <Box>
+                <SubBox>
+                    <Description>
+                        <FontName>{getFontFamily(fontItem)}</FontName>
+                        <GreyText>{getVersion(fontItem)}</GreyText>
+                        {toggleEnabled && (
+                            <Tag />
+                        )}
+                        <GreyText>{getStyleCount(fontItem)} files</GreyText>
+                    </Description>
+                    <Description>
+                        <TextBox>
+                        {getfoundry(fontItem)}
+                        </TextBox>
+                    </Description>
+                </SubBox>
+           
                 <Togglebtn>
-                    <ToggleButton id={fontItem.id}/>
+                    {toggleEnabled &&(
+                        <ToggleButton id={fontItem.id}/>
+                    )}
+                    {!toggleEnabled && buttonText &&(
+                        <Button text={buttonText} onclick ={onClick}/>
+                    )}
                 </Togglebtn>
-            </Description>
+            </Box>
         </CardBox>
         )}
         </>

@@ -1,4 +1,4 @@
-export default function InstalledFontsIcon(props){
+export default function InstalledFontsIcon({props}){
     return(
         <svg 
             width="24" 
