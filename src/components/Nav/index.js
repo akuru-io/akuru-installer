@@ -1,4 +1,8 @@
 import { Link } from 'react-router-dom';
+import {useDispatch} from 'react-redux';
+import { 
+    setCurrentFontCategory as acSetCurrentFontCategory,
+} from 'store/reducers/fontSlice';
 
 import ProfileBox from '../Profile';
 
@@ -18,38 +22,39 @@ import {
     UpdatesIcon,
     SettingIcon,
     AllFontsIcon, 
-    PremiumIcon,
-    VoteForFontsIcon,
     InstalledFontsIcon,
   } from './styled';
 
 export default function Nav() {
+    const dispatch = useDispatch();
+
+    const onClick =(type) =>{
+        dispatch(acSetCurrentFontCategory(type));
+    }
+
     return(
         <Wrapper>
             <Logo />
             <Menu>
                 <Link style={{textDecoration:"none"}} to ="/">
-                <MenuItem>
-                    <AllFontsIcon />
-                    <MenuText>All Fonts</MenuText>
-                </MenuItem>
-               </Link>
+                    <MenuItem onClick ={()=>onClick('all')}>
+                        <AllFontsIcon />
+                        <MenuText>All Fonts</MenuText>
+                    </MenuItem>
+                
+                    <MenuItem onClick ={()=>onClick('installed')}> 
+                        <InstalledFontsIcon />
+                        <MenuText>Installed Fonts</MenuText>
+                    </MenuItem>
 
-               <Link style={{textDecoration:"none"}} to ="/installed-fonts">
-                <MenuItem>
-                    <InstalledFontsIcon />
-                    <MenuText>Installed Fonts</MenuText>
-                </MenuItem>
-               </Link>
+                    <MenuItem onClick ={()=>onClick('updates')}>
+                        <UpdatesIcon />
+                        <MenuText>Updates</MenuText>
+                    </MenuItem>
+                </Link>
 
-               <Link style={{textDecoration:"none"}} to ="/updates">
-                <MenuItem>
-                    <UpdatesIcon />
-                    <MenuText>Updates</MenuText>
-                </MenuItem>
-               </Link>
 
-               <Link style={{textDecoration:"none"}} to ="/premium">
+               {/* <Link style={{textDecoration:"none"}} to ="/premium">
                 <MenuItem>
                     <PremiumIcon />
                     <MenuText>Premium</MenuText>
@@ -61,7 +66,7 @@ export default function Nav() {
                     <VoteForFontsIcon />
                     <MenuText>Vote for Fonts</MenuText>
                 </MenuItem>
-               </Link>
+               </Link> */}
 
             </Menu>
 

@@ -26,13 +26,13 @@ export default function FontCard({
     fontItem,
     toggleEnabled = true,
     buttonText,
-    onClick,
-    key,
+    onClickButton,
+    //key,
 }){
     return(
         <>
         {fontItem && (
-        <CardBox>
+        <CardBox id= {fontItem.id}>
             {getFontImageUrl(fontItem) && (
                 <Image src={getFontImageUrl(fontItem) } />
              )}
@@ -58,7 +58,7 @@ export default function FontCard({
                         <ToggleButton id={fontItem.id}/>
                     )}
                     {!toggleEnabled && buttonText &&(
-                        <Button text={buttonText} onclick ={onClick}/>
+                        <Button text={buttonText} onclick ={onClickButton}/>
                     )}
                 </Togglebtn>
             </Box>

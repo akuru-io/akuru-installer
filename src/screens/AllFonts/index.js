@@ -1,27 +1,45 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState} from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import FontCard from '../../components/FontCard';
-import {registry} from '../../utils/tempdata';
 import MoreFonts from '../../components/MoreFontsCard';
+import Header from 'components/Header'; 
+import { fetchAllFonts as acFetchFonts } from 'store/reducers/fontSlice';
+import {filterFonts} from '../../utils/font';
 
 import {
   Layout,
 } from './styled';
 
 export default function AllFonts() {
-  const [fonts, setFontData] = useState([]);
-  
+  const dispatch = useDispatch();
+  const [searchQuery, setSearchQuery] = useState(null);
+  const {fonts,fontCategory,currentLang}= useSelector((state) => state.fonts);
+ 
   const fetchAllFonts =() =>{
-    setFontData(registry);
+    dispatch(acFetchFonts());
   }
+
+  const filteredFonts =filterFonts(
+    fonts,
+    fontCategory,
+    searchQuery,
+    currentLang,
+  );
 
   useEffect(() => {
     fetchAllFonts();
-  }, []);
+  },[fonts]);
 
-
+  const onSearch =(value)=>{
+    setSearchQuery(value);
+  };
+ 
   return (
     <Layout>
-      {fonts.length>0 && fonts.map((font)=> (
+      <Header 
+        onSearch ={onSearch}
+      />
+      {filteredFonts &&filteredFonts.length>0 && filteredFonts.map((font)=> (
         <FontCard 
           key={font.id}
           fontItem ={font}
@@ -30,4 +48,4 @@ export default function AllFonts() {
       <MoreFonts/>
     </Layout>
   );
-}
+};

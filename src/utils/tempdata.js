@@ -1,6 +1,9 @@
 export const  registry =[
       {
         "id":"1",
+        "language":"Sinhala",
+        "isInstalled":true,
+        "isUpdateAvailable":false,
         "familyName": "Yaldevi",
         "description": "",
         "license": "OFL",
@@ -36,6 +39,9 @@ export const  registry =[
       },
       {
         "id":"2",
+        "language":"Tamil",
+        "isInstalled":true,
+        "isUpdateAvailable":true,
         "familyName": "Post No Bills",
         "description": "",
         "license": "OFL",
@@ -75,6 +81,9 @@ export const  registry =[
       },
       {
         "id":"3",
+        "language":"Sinhala",
+        "isInstalled":false,
+        "isUpdateAvailable":false,
         "familyName": "Abhaya Libre",
         "description": "",
         "license": "OFL",
@@ -110,6 +119,9 @@ export const  registry =[
       },
       {
         "id":"4",
+        "isInstalled":false,
+        "language":"Sinhala",
+        "isUpdateAvailable":false,
         "familyName": "GalleALPHA",
         "description": "",
         "license": "OFL",
@@ -129,6 +141,9 @@ export const  registry =[
       },
       {
         "id":"5",
+        "language":"Sinhala",
+        "isInstalled":false,
+        "isUpdateAvailable":false,
         "familyName": "Gemunu Libre",
         "description": "",
         "license": "OFL",
@@ -168,6 +183,9 @@ export const  registry =[
       },
       {
         "id":"6",
+        "language":"Tamil",
+        "isInstalled":false,
+        "isUpdateAvailable":false,
         "familyName": "KaputaALPHA",
         "description": "",
         "license": "GPL-3.0-or-later",

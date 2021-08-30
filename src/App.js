@@ -5,9 +5,7 @@ import styled from 'styled-components';
 
 import NavBar from 'components/Nav';
 import Home from 'screens/AllFonts';
-import Updates from 'screens/Updates';
 import Settings from 'screens/Settings';
-import InstalledFonts from 'screens/InstalledFonts';
 import PremiumFonts from 'screens/PremiumFonts';
 import VoteForFonts from 'screens/VoteFonts';
 
@@ -35,28 +33,15 @@ function App() {
             <Route exact path="/">
               <Home />
             </Route>
-          </Switch>
-          <Switch>
-            <Route exact path="/installed-fonts">
-              <InstalledFonts />
-            </Route>
-          </Switch>
-          <Switch>
-            <Route exact path="/updates">
-              <Updates />
-            </Route>
-          </Switch>
-          <Switch>
+        
             <Route exact path="/premium">
               < PremiumFonts />
             </Route>
-          </Switch>
-          <Switch>
+         
             <Route exact path="/Vote">
               < VoteForFonts />
             </Route>
-          </Switch>
-          <Switch>
+        
             <Route exact path="/settings">
               <Settings />
             </Route>

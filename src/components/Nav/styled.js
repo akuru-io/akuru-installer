@@ -33,7 +33,11 @@ export const MenuItem = styled.li`
   list-style-type:none;
   &:hover{
       background: rgba(215,212,212, 0.3);
-    }
+    };
+    :active{
+      background: rgba(215,212,212, 0.3);
+    };
+ 
 `;
 
 export const MenuText =styled.p`
@@ -76,11 +80,11 @@ export const SettingBox =styled.div`
 `;
 
 export const Box =styled.div`
-    display:flex;
-    flex-direction: row;
-    width:50%;
-    justify-content: flex-start;
-    padding:5px;
+  display:flex;
+  flex-direction: row;
+  width:50%;
+  justify-content: flex-start;
+  padding:5px;
 `;
 
 export const AllFontsIcon = styled(AllFontsIconSource)`
@@ -106,7 +110,7 @@ export const UpdatesIcon = styled(UpdatesIconSource)`
   min-width: 20px;
   min-height:20px;
   align-self: left;
-  padding : 0 5px 0 0 ;
+  padding : 0 0 0 3px ;
   font-weight: bold;
 `;
 

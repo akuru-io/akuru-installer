@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from 'components/Header';
 import FontCard from '../../components/FontCard';
+import PopUp from '../../components/PopUp';
 import {registry} from '../../utils/tempdata';
 
 import {
@@ -9,6 +10,7 @@ import {
 
 export default function PremiumFonts(){
     const [fonts, setFontData] = useState([]);
+    const [show, setShow] = useState(false);
     const title = 'Premium Fonts';
 
     const fetchPremiumFonts =() =>{
@@ -20,8 +22,13 @@ export default function PremiumFonts(){
       }, []);
 
       const onClick= () =>{
-        console.log('clicked');
-        //Todo write method
+        setShow(true);
+        console.log('onclick')
+        
+      }
+      const popUpOnClick=() =>{
+          console.log('closed')
+        //setShow(false);
       }
 
     return(
@@ -33,9 +40,15 @@ export default function PremiumFonts(){
                     fontItem ={font}
                     toggleEnabled ={false}
                     buttonText = 'Buy Now'
-                    onClick ={onClick}
+                    onClickButton ={() =>onClick()}
                 />
             ))}
+            {show &&(
+                <PopUp 
+                isShow ={show}
+                popUpOnclick={() =>popUpOnClick()}
+                />
+            )}
         </Layout>
     );
 }
