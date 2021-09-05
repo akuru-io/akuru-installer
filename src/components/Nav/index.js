@@ -6,6 +6,7 @@ import {
 
 import ProfileBox from '../Profile';
 
+
 import {
     Box,
     Text,
@@ -23,6 +24,7 @@ import {
     SettingIcon,
     AllFontsIcon, 
     InstalledFontsIcon,
+    BlueDot,
   } from './styled';
 
 export default function Nav() {
@@ -37,7 +39,7 @@ export default function Nav() {
             <Logo />
             <Menu>
                 <Link style={{textDecoration:"none"}} to ="/">
-                    <MenuItem onClick ={()=>onClick('all')}>
+                    <MenuItem onClick ={()=>onClick(null)}>
                         <AllFontsIcon />
                         <MenuText>All Fonts</MenuText>
                     </MenuItem>
@@ -50,6 +52,7 @@ export default function Nav() {
                     <MenuItem onClick ={()=>onClick('updates')}>
                         <UpdatesIcon />
                         <MenuText>Updates</MenuText>
+                        <BlueDot/>
                     </MenuItem>
                 </Link>
 

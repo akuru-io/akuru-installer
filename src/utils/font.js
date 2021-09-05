@@ -9,7 +9,7 @@ export const getStyleCount = (font) =>
         font.fontStyles.length :null;
 
 export const getTag = (font) => 
-    font && font.tag && font.tag.length>0 ? font.tag[0] : null;
+    font && font.tags && font.tags.length>0 ? font.tags[0] : null;
 
 export const getfoundry =(font) =>
     font && font.foundry ? font.foundry:null;
@@ -17,16 +17,16 @@ export const getfoundry =(font) =>
 export const getFontImageUrl =(font) =>
     font && font.coverImageUrl? font.coverImageUrl:null;
 
-export const getInstalledFonts= (fonts,currentLang=null)=>{
+export const getInstalledFonts= (fonts,currentLan=null)=>{
 
-  if(currentLang && currentLang !== 'all' )
-  return fonts.filter(font =>font.isInstalled === true && font.language.toLowerCase() === currentLang.toLowerCase());
+  if(currentLan && currentLan !== 'Language' )
+  return fonts.filter(font =>font.isInstalled === true && font.language.toLowerCase() === currentLan.toLowerCase());
 
   return fonts.filter(font =>font.isInstalled === true );
 }
 
-export const getFontsByLanguage= (fonts,currentLang)=>
-  fonts ? fonts.filter(font =>font.language.toLowerCase() === currentLang.toLowerCase()):[];
+export const getFontsByLanguage= (fonts,currentLan)=>
+  fonts ? fonts.filter(font =>font.language.toLowerCase() === currentLan.toLowerCase()):[];
 
 export const getUpdatesForFonts= (fonts)=>
   fonts ? fonts.filter(font =>font.isUpdateAvailable ===true):[];
@@ -37,18 +37,17 @@ export const filterByQuery = (font,query ='') => {
   return fontName.includes(query.toLowerCase()) ;
 };
 
-export const filterFonts = (fonts, fontCategory, searchQuery,currentLang=null) =>{
-
+export const filterFonts = (fonts, fontCategory, searchQuery,currentLan=null) =>{
   var filteredFonts = fonts && fonts.length>0?fonts:[];
 
   if(filteredFonts && filteredFonts.length >0)
   {
     if (fontCategory === 'installed')
-      filteredFonts = getInstalledFonts(filteredFonts,currentLang);
+      filteredFonts = getInstalledFonts(filteredFonts,currentLan);
     if (fontCategory === 'updates')
-      filteredFonts = getUpdatesForFonts(getInstalledFonts(filteredFonts,currentLang));
-    if (fontCategory === 'all'&& currentLang)
-      filteredFonts = getFontsByLanguage(filteredFonts,currentLang);
+      filteredFonts = getUpdatesForFonts(getInstalledFonts(filteredFonts,currentLan));
+    if (fontCategory == null && currentLan !== 'Language')
+      filteredFonts = getFontsByLanguage(filteredFonts,currentLan);
     if (searchQuery)
       filteredFonts =filteredFonts.filter(font =>filterByQuery(font,searchQuery));
   }
@@ -56,10 +55,10 @@ export const filterFonts = (fonts, fontCategory, searchQuery,currentLang=null) =
 };
 
 export const  languages = [
-    {
-      "id":1,
-      "name":'All'
-    },
+    // {
+    //   "id":1,
+    //   "name":'Language'
+    // },
     {
       "id":2,
       "name":'Sinhala'

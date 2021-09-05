@@ -1,45 +1,28 @@
-import {useState } from 'react';
-import {useDispatch } from 'react-redux';
 import {languages} from '../../utils/font';
 import { 
-  setCurrentLanguage as acSetCurrentLanguage, 
-} from 'store/reducers/fontSlice'
-
-import {
-    StyledUl,
-    Dropbtn,
-    DropDownContent,
-    DropDownLi,
-    SubA,
-    ArrowHead, 
+    Select
 } from './styled';
 
-export default function DropDown(){
-  const dispatch = useDispatch();
-  const [currentLang, setCurrentLang] = useState('Language');
-  const handleSelect = (option) => {
-    setCurrentLang(option);
-    dispatch(acSetCurrentLanguage(option));
-  };
+export default function DropDown({
+  currentLan ="language" ,
+  handleSelect,
+  isShow = true,
+}){
   return (
-    <StyledUl>
-      <DropDownLi>
-        <Dropbtn >
-          {currentLang}
-          <ArrowHead />
-        </Dropbtn>
-
-        <DropDownContent>
-        {languages &&languages.length>0 && languages.map((language)=> (
-          <SubA 
-            key ={language.id} 
-            onClick = {() => handleSelect (language.name)}>{language.name}
-          </SubA>
-        ))}
-        </DropDownContent>
-
-      </DropDownLi>
-    </StyledUl>
-  );
-     
+    <Select onClick = {(value) => handleSelect (value.target.value)}>
+      {isShow && (
+        <option value="Language">
+        Language
+        </option>
+      )}
+       {languages &&languages.length>0 && languages.map((language)=> (
+      <option
+        value = {language.name}
+        key ={language.id}
+      >
+        {language.name}
+      </option>
+       ))}
+    </Select>
+  );   
 }

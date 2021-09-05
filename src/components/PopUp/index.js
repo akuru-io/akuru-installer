@@ -1,4 +1,4 @@
-import Button from '../../assets/Button';
+import Button from '../Button';
 import {
     Model,
     ModelContentBox,

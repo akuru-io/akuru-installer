@@ -1,6 +1,6 @@
-import Tag from '../../assets/Tag';
-import ToggleButton from '../../assets/ToggleButton';
-import Button from '../../assets/Button';
+import Tag from '../Tag';
+import ToggleButton from '../ToggleButton';
+import Button from '../Button';
 
 import {
     getFontFamily,
@@ -8,6 +8,7 @@ import {
     getVersion,
     getfoundry,
     getFontImageUrl,
+    getTag ,
 } from'../../utils/font';
 
 import {
@@ -21,14 +22,20 @@ import {
     Box,
     SubBox,
 } from './styled';
+import { useState } from 'react';
 
 export default function FontCard({
     fontItem,
     toggleEnabled = true,
     buttonText,
     onClickButton,
-    //key,
 }){
+    const showtag = fontItem && fontItem.tags.length>0? true:false;
+    const [toggle,setToggle] =useState(false);
+
+    const onclick =(val)=>{
+        console.log(val)
+    }
     return(
         <>
         {fontItem && (
@@ -41,8 +48,8 @@ export default function FontCard({
                     <Description>
                         <FontName>{getFontFamily(fontItem)}</FontName>
                         <GreyText>{getVersion(fontItem)}</GreyText>
-                        {toggleEnabled && (
-                            <Tag />
+                        { showtag && (
+                            <Tag value={getTag (fontItem)}/>
                         )}
                         <GreyText>{getStyleCount(fontItem)} files</GreyText>
                     </Description>
@@ -55,7 +62,14 @@ export default function FontCard({
            
                 <Togglebtn>
                     {toggleEnabled &&(
-                        <ToggleButton id={fontItem.id}/>
+                        <ToggleButton 
+                        id={fontItem.id}
+                        title="toogle switch xs"
+                        size="xs"
+                        value={toggle}
+                        checked={toggle}
+                        onChange={onclick}
+                        />
                     )}
                     {!toggleEnabled && buttonText &&(
                         <Button text={buttonText} onclick ={onClickButton}/>

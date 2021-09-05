@@ -7,14 +7,15 @@ import AllFontsIconSource from '../../assets/Icon/AllFontsIcon';
 import InstalledFontsIconSource from '../../assets/Icon/InstalledFontsIcon';
 import PremiumIconSource  from '../../assets/Icon/PremiumIcon';
 import VoteForFontsIconSource  from '../../assets/Icon/VoteForFontsIcon';
+import BlueDotSource from 'assets/Icon/BlueDot';
 
 export const Wrapper = styled.div`
-  width: 20%;
+  min-width: 292px;
   background: #4E4D4D;
   display: flex;
   flex-direction: column;
   @media screen and (max-width:100rem){
-    width: 30%;
+   
   }
 `;
 
@@ -153,4 +154,8 @@ export const Logo = styled(LogoSource)`
   min-height :50px;
   padding : 0 0 0 0px;
   margin : 15px 15px 10px 15px;
+`;
+
+export const BlueDot =styled(BlueDotSource)`
+  margin:8px 0 0 10px;
 `;

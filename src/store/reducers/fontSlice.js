@@ -5,7 +5,7 @@ export const fontSlice = createSlice({
     name:'font',initialState:{
         loading:null,
         fonts:[],
-        currentLang:null,
+        currentLang:'Language',
         fontCategory:null,
         error:null,
     },
