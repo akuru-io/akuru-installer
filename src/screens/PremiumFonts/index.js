@@ -23,7 +23,7 @@ export default function PremiumFonts(){
 
       const onClick= () =>{
         setShow(true);
-        console.log('onclick')
+        
         
       }
       const popUpOnClick=() =>{

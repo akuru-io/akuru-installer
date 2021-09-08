@@ -32,11 +32,12 @@ export const MenuItem = styled.li`
   display: flex;
   flex-direction:row;
   list-style-type:none;
+
   &:hover{
-      background: rgba(215,212,212, 0.3);
+      background: rgba(215,212,212, 0.3)!important;
     };
-    :active{
-      background: rgba(215,212,212, 0.3);
+  :active{
+      background: rgba(215,212,212, 0.3)!important;
     };
  
 `;

@@ -50,7 +50,7 @@ export default function Nav() {
                     </MenuItem>
 
                     <MenuItem onClick ={()=>onClick('updates')}>
-                        <UpdatesIcon />
+                     <UpdatesIcon />
                         <MenuText>Updates</MenuText>
                         <BlueDot/>
                     </MenuItem>

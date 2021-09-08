@@ -54,6 +54,37 @@ export const filterFonts = (fonts, fontCategory, searchQuery,currentLan=null) =>
     return filteredFonts;
 };
 
+export const isInstalledFont=(fontItem)=>
+  fontItem && fontItem.isInstalled? fontItem.isInstalled:false;
+
+export const prepareFont =(font)=>{
+ 
+  
+   var updatedFont ={
+    isInstalled :true,
+     ...font,
+   
+   }
+  
+   
+  //   updatedFont.id=font.id?font.id:null;
+  //   updatedFont.isInstalled =true;
+  //   updatedFont.language=font.language?font.language:null;
+  //   updatedFont.isUpdateAvailable=font.isUpdateAvailable?font.isUpdateAvailable:null;
+  //   updatedFont.familyName=font.familyName?font.familyName:null;
+  //   updatedFont.description=font.description?font.description:null;
+  //   updatedFont.license=font.license?font.license:null;
+  //   updatedFont.designers=font.designers?font.designers:null;
+  //   updatedFont.version=font.version;
+  //   updatedFont.foundry=font.foundry;
+  //   updatedFont.issueTrackerURL=font.issueTrackerURL;
+  //   updatedFont.srcURL=font.srcURL;
+  //   updatedFont.coverImageUrl=font.coverImageUrl;
+  //   updatedFont.fontStyles=font.fontStyles;
+  //   updatedFont.tags=font.tags;
+    return updatedFont;
+}
+
 export const  languages = [
     // {
     //   "id":1,

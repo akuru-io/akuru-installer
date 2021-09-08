@@ -25,6 +25,10 @@ export const fontSlice = createSlice({
         setCurrentLanguage(state,{payload}){
           state.currentLang = payload;
         },
+        setInstallation(state,{payload}){
+          const updatedFont =payload;
+          state.fonts.map((font)=> (font.id===updatedFont.id)?updatedFont:font);
+        },
         setError(state, { payload }) {
             state.errors = payload;
             state.isLoading = false;
@@ -33,7 +37,7 @@ export const fontSlice = createSlice({
 
 });
 
-export const {setIsLoading,fontFetched,setError,setFontCategory,setCurrentLanguage}= fontSlice.actions;
+export const {setIsLoading,fontFetched,setError,setFontCategory,setCurrentLanguage,setInstallation}= fontSlice.actions;
 
 export const fetchAllFonts =
   (cb = () => {}) =>
@@ -63,5 +67,12 @@ export const fetchAllFonts =
       cb(null, lang);
   };
 
+  export const updateFont=
+  (item,cb = () => {}) =>
+   (dispatch) => {
+     
+      dispatch(setInstallation(item));
+      cb(null, item);
+  };
 
   export default fontSlice.reducer;

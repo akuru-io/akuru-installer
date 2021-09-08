@@ -1,6 +1,10 @@
+import { useSelector,useDispatch } from 'react-redux';
 import Tag from '../Tag';
 import ToggleButton from '../ToggleButton';
 import Button from '../Button';
+import { 
+    updateFont as acUpdateFont
+  } from 'store/reducers/fontSlice';
 
 import {
     getFontFamily,
@@ -9,6 +13,8 @@ import {
     getfoundry,
     getFontImageUrl,
     getTag ,
+    isInstalledFont,
+    prepareFont,
 } from'../../utils/font';
 
 import {
@@ -30,11 +36,17 @@ export default function FontCard({
     buttonText,
     onClickButton,
 }){
+    const dispatch = useDispatch();
     const showtag = fontItem && fontItem.tags.length>0? true:false;
-    const [toggle,setToggle] =useState(false);
+    const [toggle,setToggle] =useState(true);
+    const [installedFont, setInstalledFont]=useState(isInstalledFont(fontItem));
+    const {fonts,fontCategory,currentLang}= useSelector((state) => state.fonts);
+ 
 
+    
     const onclick =(val)=>{
-        console.log(val)
+        setInstalledFont(val);
+        dispatch(acUpdateFont(prepareFont(fontItem)))
     }
     return(
         <>
@@ -61,17 +73,14 @@ export default function FontCard({
                 </SubBox>
            
                 <Togglebtn>
-                    {toggleEnabled &&(
+                    {!installedFont &&(
                         <ToggleButton 
-                        id={fontItem.id}
-                        title="toogle switch xs"
-                        size="xs"
-                        value={toggle}
+                        id={"checkBox"+fontItem.id}
                         checked={toggle}
                         onChange={onclick}
                         />
                     )}
-                    {!toggleEnabled && buttonText &&(
+                    {installedFont && buttonText &&(
                         <Button text={buttonText} onclick ={onClickButton}/>
                     )}
                 </Togglebtn>

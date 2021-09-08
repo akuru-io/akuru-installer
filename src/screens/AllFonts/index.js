@@ -33,6 +33,7 @@ export default function AllFonts() {
 
   useEffect(() => {
     fetchFonts();
+  
   },[fonts]);
 
   const onSearch =(value)=>{
@@ -55,6 +56,8 @@ export default function AllFonts() {
         <FontCard 
           key={font.id}
           fontItem ={font}
+          buttonText="Buy Now"
+          
         />
       ))}
       <MoreFonts/>

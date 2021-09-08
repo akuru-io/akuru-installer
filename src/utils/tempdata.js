@@ -82,7 +82,6 @@ export const  registry =[
       {
         "id":"3",
         "language":"Sinhala",
-        "isInstalled":false,
         "isUpdateAvailable":false,
         "familyName": "Abhaya Libre",
         "description": "",
