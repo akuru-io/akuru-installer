@@ -32,13 +32,11 @@ export const MenuItem = styled.li`
   display: flex;
   flex-direction:row;
   list-style-type:none;
-
+  background-color:${(props) => props.active ? 'rgba(215,212,212, 0.3)' : 'none' };
   &:hover{
       background: rgba(215,212,212, 0.3)!important;
     };
-  :active{
-      background: rgba(215,212,212, 0.3)!important;
-    };
+
  
 `;
 

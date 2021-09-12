@@ -1,4 +1,4 @@
-import { useSelector,useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Tag from '../Tag';
 import ToggleButton from '../ToggleButton';
 import Button from '../Button';
@@ -14,7 +14,6 @@ import {
     getFontImageUrl,
     getTag ,
     isInstalledFont,
-    prepareFont,
 } from'../../utils/font';
 
 import {
@@ -40,14 +39,12 @@ export default function FontCard({
     const showtag = fontItem && fontItem.tags.length>0? true:false;
     const [toggle,setToggle] =useState(true);
     const [installedFont, setInstalledFont]=useState(isInstalledFont(fontItem));
-    const {fonts,fontCategory,currentLang}= useSelector((state) => state.fonts);
- 
 
-    
     const onclick =(val)=>{
         setInstalledFont(val);
-        dispatch(acUpdateFont(prepareFont(fontItem)))
+        dispatch(acUpdateFont(fontItem))
     }
+
     return(
         <>
         {fontItem && (

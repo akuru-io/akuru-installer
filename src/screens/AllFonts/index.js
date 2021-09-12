@@ -33,8 +33,7 @@ export default function AllFonts() {
 
   useEffect(() => {
     fetchFonts();
-  
-  },[fonts]);
+  },[]);
 
   const onSearch =(value)=>{
     setSearchQuery(value);
@@ -44,6 +43,10 @@ export default function AllFonts() {
     setCurrentLan(option);
     dispatch(acSetCurrentLanguage(option));
   };
+
+  const onBuyNowClick =() =>{
+    //ToDo
+  }
  
   return (
     <Layout>
@@ -57,6 +60,8 @@ export default function AllFonts() {
           key={font.id}
           fontItem ={font}
           buttonText="Buy Now"
+          onClickButton={onBuyNowClick}
+          
           
         />
       ))}

@@ -42,11 +42,11 @@ export default function Settings(){
 
     const OnDirectoryChange=()=>{
         //Todo
-    }
+    };
 
     const onSubKeyChange=()=>{
         // Todo
-    }
+    };
 
     const pageTitle = "Settings";
     return(
@@ -98,7 +98,7 @@ export default function Settings(){
                     <GrayText>Do not Change this </GrayText>
                     <Button 
                         text="Add another font directory"
-                        onclick ={OnDirectoryChange}
+                        onclick ={() =>OnDirectoryChange()}
                     />
                 </ColumnBox>
 
@@ -116,7 +116,7 @@ export default function Settings(){
             <Text>Please get your subscriptionkey here </Text>
             <Button 
                 text="Update"
-                onClick ={onSubKeyChange}
+                onclick ={()=>onSubKeyChange()}
             />
         </Container>
       </Layout>

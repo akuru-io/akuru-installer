@@ -1,7 +1,6 @@
 import{
 Input,
 Label,
-rotate,
 Indicator,
 } from './styled';
 
@@ -10,7 +9,6 @@ export default function Checkbox ({
   disabled =false,
   label ='x',
   checked ,
-  //name='xcv',
   value,
   onChange,
 }){
@@ -21,7 +19,6 @@ export default function Checkbox ({
       <Input
         id={id}
         type="checkbox"
-        //name={name}
         value={value}
         disabled={disabled}
         checked={checked}

@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import {registry} from '../../utils/tempdata';
+import { fetchAll } from 'api/fonts';
+
 
 export const fontSlice = createSlice({
     name:'font',initialState:{
@@ -26,8 +27,12 @@ export const fontSlice = createSlice({
           state.currentLang = payload;
         },
         setInstallation(state,{payload}){
-          const updatedFont =payload;
-          state.fonts.map((font)=> (font.id===updatedFont.id)?updatedFont:font);
+          const index = state.fonts.findIndex(f => f.id === payload.id);
+          const fonts = state.fonts
+          fonts[index] = {
+            ...fonts[index],
+            isInstalled:true};
+          state.fonts = fonts;
         },
         setError(state, { payload }) {
             state.errors = payload;
@@ -40,13 +45,13 @@ export const fontSlice = createSlice({
 export const {setIsLoading,fontFetched,setError,setFontCategory,setCurrentLanguage,setInstallation}= fontSlice.actions;
 
 export const fetchAllFonts =
-  (cb = () => {}) =>
-   (dispatch) => {
+   (cb = () => {}) =>
+  async (dispatch) => {
     dispatch(setIsLoading(true));
     try {
-        // TODO fetch method 
-      dispatch(fontFetched(registry));
-      cb(null, registry);
+      const response = await fetchAll ();
+      dispatch(fontFetched(response[0]));
+      cb(null, response);
     } catch (err) {
       dispatch(setError(err));
       cb(err, null);

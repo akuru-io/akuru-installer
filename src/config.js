@@ -1,0 +1,1 @@
+export const apiBaseUrl = 'https://raw.githubusercontent.com/akuru-io/akuru-registry/master/akuru.json';

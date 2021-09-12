@@ -26,12 +26,15 @@ import {
     InstalledFontsIcon,
     BlueDot,
   } from './styled';
+import { useState } from 'react';
 
 export default function Nav() {
     const dispatch = useDispatch();
+    const [active, setActive] = useState();
 
     const onClick =(type) =>{
         dispatch(acSetCurrentFontCategory(type));
+        setActive(type);
     }
 
     return(
@@ -39,17 +42,17 @@ export default function Nav() {
             <Logo />
             <Menu>
                 <Link style={{textDecoration:"none"}} to ="/">
-                    <MenuItem onClick ={()=>onClick(null)}>
+                    <MenuItem active ={!active} onClick ={()=>onClick(null)}>
                         <AllFontsIcon />
                         <MenuText>All Fonts</MenuText>
                     </MenuItem>
                 
-                    <MenuItem onClick ={()=>onClick('installed')}> 
+                    <MenuItem active={active === 'installed'} onClick ={()=>onClick('installed')}> 
                         <InstalledFontsIcon />
                         <MenuText>Installed Fonts</MenuText>
                     </MenuItem>
 
-                    <MenuItem onClick ={()=>onClick('updates')}>
+                    <MenuItem active={active === 'updates'} onClick ={()=>onClick('updates')}>
                      <UpdatesIcon />
                         <MenuText>Updates</MenuText>
                         <BlueDot/>
