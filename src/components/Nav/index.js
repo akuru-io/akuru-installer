@@ -25,6 +25,7 @@ import {
     AllFontsIcon, 
     InstalledFontsIcon,
     BlueDot,
+    // PremiumIcon,
   } from './styled';
 import { useState } from 'react';
 
@@ -60,14 +61,14 @@ export default function Nav() {
                 </Link>
 
 
-               {/* <Link style={{textDecoration:"none"}} to ="/premium">
+                {/* <Link style={{textDecoration:"none"}} to ="/premium">
                 <MenuItem>
                     <PremiumIcon />
                     <MenuText>Premium</MenuText>
                 </MenuItem>
-               </Link>
+               </Link> */}
 
-               <Link style={{textDecoration:"none"}} to ="/vote">
+               {/*<Link style={{textDecoration:"none"}} to ="/vote">
                 <MenuItem>
                     <VoteForFontsIcon />
                     <MenuText>Vote for Fonts</MenuText>

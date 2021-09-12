@@ -1,4 +1,5 @@
 import Button from '../Button';
+import ProgressCircle from 'components/ProgressCircle';
 import {
     Model,
     ModelContentBox,
@@ -21,7 +22,7 @@ export default function PopUp ({
 	return (
     	<Model show={isShow} >
         	<ModelProgressBox>
-
+                <ProgressCircle />
             </ModelProgressBox>
             <ModelContentBox>
                 <InforIcon />
@@ -35,7 +36,7 @@ export default function PopUp ({
                     <ButtonArea>
                         <Button 
                             text={buttonText}
-                            onclick={isShow?popUpOnclick():''}
+                            onclick={()=>popUpOnclick()}
                         />
                     </ButtonArea>
                 </TextBox>

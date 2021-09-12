@@ -43,13 +43,13 @@ export const Model = styled.div`
 	left: 40%;
 	max-height: 300px;
     background-color:#FFFF;
-	width:565px;
+	width:580px;
     flex-direction:row;
     box-shadow:1px 3px 20px 0px #cccccc;
     padding:15px;
     border: 1px solid #E2E2E2;
     @media screen and (max-width:100rem){
-        width:450px;
+        width:500px;
         left: 35%;
       }
 `;
@@ -63,6 +63,7 @@ export const ModelProgressBox =styled.div`
       display: flex;
       flex-direction:column;
       width:40%;
+      padding:12px;
 `;
 
 export const InforIcon =styled(InforIconResource)`

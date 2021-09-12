@@ -23,7 +23,7 @@ export default function AllFonts() {
   const fetchFonts =() =>{
     dispatch(acFetchFonts());
   }
-
+  const title= fontCategory === 'installed' ? 'Installed Fonts':null;
   const filteredFonts =filterFonts(
     fonts,
     fontCategory,
@@ -54,6 +54,7 @@ export default function AllFonts() {
         onSearch ={onSearch}
         handleSelect={onLanguageselect}
         currentLan={currentLang}
+        title = {title}
       />
       {filteredFonts &&filteredFonts.length>0 && filteredFonts.map((font)=> (
         <FontCard 

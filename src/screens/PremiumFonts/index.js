@@ -27,8 +27,7 @@ export default function PremiumFonts(){
         
       }
       const popUpOnClick=() =>{
-          console.log('closed')
-        //setShow(false);
+        setShow(false);
       }
 
     return(
