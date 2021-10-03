@@ -35,7 +35,7 @@ export const  registry =[
             "fontUrl": "https://github.com/mooniak/yaldevi-fonts/raw/master/fonts/ttf/Yaldevi-SemiBold.ttf"
           }
         ],
-        "tags": []
+        "tags": ['div']
       },
       {
         "id":"2",
@@ -82,7 +82,6 @@ export const  registry =[
       {
         "id":"3",
         "language":"Sinhala",
-        "isInstalled":false,
         "isUpdateAvailable":false,
         "familyName": "Abhaya Libre",
         "description": "",

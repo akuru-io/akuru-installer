@@ -9,16 +9,24 @@ import {
 export default function Header({
     title,
     onSearch,
+    searchEnabled = true,
+    handleSelect,
+    currentLan,
 }){
     return(
        <Box>
            <HeaderTitle open={!title}>{title}</HeaderTitle>
-           <SearchBox>
-             <SearchBar 
-                onSearch ={onSearch}
-            />
-            <DropDown />
-           </SearchBox>
+           {searchEnabled &&(
+            <SearchBox>
+                <SearchBar 
+                    onSearch ={onSearch}
+                />
+                <DropDown 
+                    handleSelect ={handleSelect}
+                    currentLan={currentLan}
+                />
+            </SearchBox>
+           )}
        </Box>
     );
 }

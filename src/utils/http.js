@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { apiBaseUrl } from 'config';
 
 const requestInterceptor = (req) => {
   return req;
@@ -9,9 +10,9 @@ const responseInterceptor = (res) => {
 };
 
 export const init = () => {
-  axios.defaults.baseURL = '/'; // Set API_BASE_URL here
+  axios.defaults.baseURL = apiBaseUrl; // Set API_BASE_URL here
   axios.defaults.headers['Content-Type'] = 'application/json';
-  axios.defaults.headers['X-Request-With'] = 'XMLHTTPRequest';
+  axios.defaults.headers['X-Request-With'] = 'XMLHTTPSRequest';
   axios.interceptors.request.use(requestInterceptor);
   axios.interceptors.response.use(responseInterceptor);
 };
@@ -33,6 +34,7 @@ export const request = (options) => axios(options);
 
 export const get = (url, options = null) => axios.get(url, options);
 
+export const getTest = () => axios.get();
 export const post = (url, data, options = null) =>
   axios.post(url, data, options);
 

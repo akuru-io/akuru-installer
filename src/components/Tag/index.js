@@ -12,10 +12,12 @@ export const TagCom =styled.div`
     margin: 0 5px;
 `;
 
-export default function Tag(){
+export default function Tag({
+    value
+}){
     return(
         <TagCom>
-            dev
+            {value}
         </TagCom>
     );
 

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const BlueButton = styled.button`
     min-height:30px;
-    min-width:108px;
+    width:fit-content;
     background-color:#5090f1;
     color:#ffff;
     padding:10px 15px;
@@ -15,7 +15,7 @@ export default function Button({
     onclick,
 }){
 return(
-    <BlueButton onClick={onclick}>
+    <BlueButton onClick={()=>onclick()}>
         {text}
     </BlueButton>
  );

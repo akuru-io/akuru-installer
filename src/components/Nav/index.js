@@ -6,6 +6,7 @@ import {
 
 import ProfileBox from '../Profile';
 
+
 import {
     Box,
     Text,
@@ -23,13 +24,18 @@ import {
     SettingIcon,
     AllFontsIcon, 
     InstalledFontsIcon,
+    BlueDot,
+    // PremiumIcon,
   } from './styled';
+import { useState } from 'react';
 
 export default function Nav() {
     const dispatch = useDispatch();
+    const [active, setActive] = useState();
 
     const onClick =(type) =>{
         dispatch(acSetCurrentFontCategory(type));
+        setActive(type);
     }
 
     return(
@@ -37,31 +43,32 @@ export default function Nav() {
             <Logo />
             <Menu>
                 <Link style={{textDecoration:"none"}} to ="/">
-                    <MenuItem onClick ={()=>onClick('all')}>
+                    <MenuItem active ={!active} onClick ={()=>onClick(null)}>
                         <AllFontsIcon />
                         <MenuText>All Fonts</MenuText>
                     </MenuItem>
                 
-                    <MenuItem onClick ={()=>onClick('installed')}> 
+                    <MenuItem active={active === 'installed'} onClick ={()=>onClick('installed')}> 
                         <InstalledFontsIcon />
                         <MenuText>Installed Fonts</MenuText>
                     </MenuItem>
 
-                    <MenuItem onClick ={()=>onClick('updates')}>
-                        <UpdatesIcon />
+                    <MenuItem active={active === 'updates'} onClick ={()=>onClick('updates')}>
+                     <UpdatesIcon />
                         <MenuText>Updates</MenuText>
+                        <BlueDot/>
                     </MenuItem>
                 </Link>
 
 
-               {/* <Link style={{textDecoration:"none"}} to ="/premium">
+                {/* <Link style={{textDecoration:"none"}} to ="/premium">
                 <MenuItem>
                     <PremiumIcon />
                     <MenuText>Premium</MenuText>
                 </MenuItem>
-               </Link>
+               </Link> */}
 
-               <Link style={{textDecoration:"none"}} to ="/vote">
+               {/*<Link style={{textDecoration:"none"}} to ="/vote">
                 <MenuItem>
                     <VoteForFontsIcon />
                     <MenuText>Vote for Fonts</MenuText>

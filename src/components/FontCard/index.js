@@ -1,6 +1,10 @@
-import Tag from '../../assets/Tag';
-import ToggleButton from '../../assets/ToggleButton';
-import Button from '../../assets/Button';
+import { useDispatch } from 'react-redux';
+import Tag from '../Tag';
+import ToggleButton from '../ToggleButton';
+import Button from '../Button';
+import { 
+    updateFont as acUpdateFont
+  } from 'store/reducers/fontSlice';
 
 import {
     getFontFamily,
@@ -8,6 +12,8 @@ import {
     getVersion,
     getfoundry,
     getFontImageUrl,
+    getTag ,
+    isInstalledFont,
 } from'../../utils/font';
 
 import {
@@ -21,14 +27,24 @@ import {
     Box,
     SubBox,
 } from './styled';
+import { useState } from 'react';
 
 export default function FontCard({
     fontItem,
     toggleEnabled = true,
     buttonText,
     onClickButton,
-    //key,
 }){
+    const dispatch = useDispatch();
+    const showtag = fontItem && fontItem.tags.length>0? true:false;
+    const [toggle,setToggle] =useState(true);
+    const [installedFont, setInstalledFont]=useState(isInstalledFont(fontItem));
+
+    const onclick =(val)=>{
+        setInstalledFont(val);
+        dispatch(acUpdateFont(fontItem))
+    }
+
     return(
         <>
         {fontItem && (
@@ -41,8 +57,8 @@ export default function FontCard({
                     <Description>
                         <FontName>{getFontFamily(fontItem)}</FontName>
                         <GreyText>{getVersion(fontItem)}</GreyText>
-                        {toggleEnabled && (
-                            <Tag />
+                        { showtag && (
+                            <Tag value={getTag (fontItem)}/>
                         )}
                         <GreyText>{getStyleCount(fontItem)} files</GreyText>
                     </Description>
@@ -54,10 +70,14 @@ export default function FontCard({
                 </SubBox>
            
                 <Togglebtn>
-                    {toggleEnabled &&(
-                        <ToggleButton id={fontItem.id}/>
+                    {!installedFont &&(
+                        <ToggleButton 
+                        id={"checkBox"+fontItem.id}
+                        checked={toggle}
+                        onChange={onclick}
+                        />
                     )}
-                    {!toggleEnabled && buttonText &&(
+                    {installedFont && buttonText &&(
                         <Button text={buttonText} onclick ={onClickButton}/>
                     )}
                 </Togglebtn>
